@@ -1,0 +1,15 @@
+[package]
+name = "tmux-cs"
+version = "0.1.0"
+authors = ["Rory Bradford <roryrjb@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "tm"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+
+[dependencies]
+getopts = "0.2"
