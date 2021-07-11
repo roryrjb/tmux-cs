@@ -13,3 +13,4 @@ lto = true
 
 [dependencies]
 getopts = "0.2"
+partial_application = "0.2.1"
