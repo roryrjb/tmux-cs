@@ -15,10 +15,10 @@ pub fn new_detached_session(dir: &str, session_name: &str) -> Result<bool, Error
 
 pub fn new_session(dir: &str, session_name:&str) -> Result<bool, Error> {
     match new_detached_session(dir, session_name) {
-        Ok(session_created) => {
-            if !session_created {
-                return Err(Error::new(ErrorKind::Other, "Could not create session."));
-            }
+        // TODO: tidy this up
+        Ok(_session_created) => {
+            // if !session_created {
+            // }
 
             let switched = switch_client(session_name);
 
@@ -26,7 +26,8 @@ pub fn new_session(dir: &str, session_name:&str) -> Result<bool, Error> {
                 let attached = attach(session_name);
                 Ok(attached)
             } else {
-                Ok(true)
+                let attached = attach(session_name);
+                Ok(attached)
             }
 
         }
